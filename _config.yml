@@ -18,20 +18,22 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: Fabio Ruicci
+author:
+  name: Fabio Ruicci
+  email: fabioruicci@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Tutoriais e cursos de programação.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 minima:
   social_links:
-    twitter: jekyllrb
-    github:  jekyll
+    twitter: fabioruicci
+    github:  fabioruicci
     youtube_channel: UCfLKJox9Gd5V57_0kzq-jKQ
-    youtube_channel_name: Fabio Ruicci    
+    youtube_channel_name: Fabio Ruicci
+    instagram: fabioruicci
+    linkedin: fabioruicci
 
 # Build settings
 theme: minima
