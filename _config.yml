@@ -25,7 +25,7 @@ author:
 description: >- # this means to ignore newlines until "baseurl:"
   Tutoriais e cursos de programação.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.fabioruicci.com.br" # the base hostname & protocol for your site, e.g. http://example.com
 minima:
   social_links:
     twitter: fabioruicci
@@ -34,6 +34,13 @@ minima:
     youtube_channel_name: Fabio Ruicci
     instagram: fabioruicci
     linkedin: fabioruicci
+  date_format: "%d/%m/%Y"
+
+disqus:
+  shortname: fabioruicci
+
+google_analytics: UA-159334321-1
+  
 
 # Build settings
 theme: minima
