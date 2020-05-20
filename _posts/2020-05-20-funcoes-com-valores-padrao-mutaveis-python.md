@@ -65,12 +65,12 @@ Isso aqui é um clássico do Python e já pegou muita gente desprevenida.
 Observe esse bloco de código e pense: Qual vai ser o valor das variáveis __números_do_fabio__ e __números_da_josi__?
 
 ```python
-números_do_fabio = [1, 2, 3]
-números_da_josi = números_do_fabio
+numeros_do_fabio = [1, 2, 3]
+numeros_da_josi = numeros_do_fabio
 
-números_da_josi.append(4)
-print(f"Números escolhidos pela Josi: {números_da_josi}")
-print(f"Números escolhidos pelo Fabio: {números_do_fabio}")
+numeros_da_josi.append(4)
+print(f"Números escolhidos pela Josi: {numeros_da_josi}")
+print(f"Números escolhidos pelo Fabio: {numeros_do_fabio}")
 ```
 
 Output:
@@ -103,12 +103,12 @@ Observações:
 2. Esse caso é especial porque estamos lidando com listas, que são objetos __mutáveis__! O exemplo abaixo não deve causar nenhuma estranheza ou confusão, e também não tem nenhuma pegadinha:
 
 ```python
-objeto_não_mutável_do_fabio = 42
-objeto_não_mutável_da_josi = objeto_não_mutável_do_fabio
+objeto_nao_mutavel_do_fabio = 42
+objeto_nao_mutavel_da_josi = objeto_nao_mutavel_do_fabio
 
-objeto_não_mutável_da_josi = 43
-print(f"Objeto da Josi: {objeto_não_mutável_da_josi}")
-print(f"Objeto do Fabio: {objeto_não_mutável_do_fabio}")
+objeto_nao_mutavel_da_josi = 43
+print(f"Objeto da Josi: {objeto_nao_mutavel_da_josi}")
+print(f"Objeto do Fabio: {objeto_nao_mutavel_do_fabio}")
 ```
 Output:
 ```
@@ -120,12 +120,12 @@ Objeto do Fabio: 42
 3. Esse bloco de código também não deve causar nenhuma estranheza. A lista __números_do_fabio__ não é modificada. Isso acontece porque, apesar das duas listas serem visualmente idênticas, elas são objetos diferentes, iniciados em momentos diferentes, ocupando lugares (endereços) diferentes na memória do computador.
 
 ```python
-números_do_fabio = [1, 2, 3]
-números_da_josi = [1, 2, 3]
+numeros_do_fabio = [1, 2, 3]
+numeros_da_josi = [1, 2, 3]
 
-números_da_josi.append(4)
-print(f"Números escolhidos pela Josi: {números_da_josi}")
-print(f"Números escolhidos pelo Fabio: {números_do_fabio}")
+numeros_da_josi.append(4)
+print(f"Números escolhidos pela Josi: {numeros_da_josi}")
+print(f"Números escolhidos pelo Fabio: {numeros_do_fabio}")
 ```
 Output:
 ```
@@ -136,12 +136,12 @@ Números escolhidos pelo Fabio: [1, 2, 3]
 4. Nosso objetivo inicial com o código __números_da_josi = números_do_fabio__ era ter dois objetos diferentes, apontando para duas listas diferentes (sim, listas com valores iguais, mas objetos diferentes. Se você ainda estiver com dúvidas com relação a isso, me pergunte!), podemos fazer isso com uma pequena modificação no código, basta utilizar o método copy:
 
 ```python
-números_do_fabio = [1, 2, 3]
-números_da_josi = números_do_fabio.copy()
+numeros_do_fabio = [1, 2, 3]
+numeros_da_josi = numeros_do_fabio.copy()
 
-números_da_josi.append(4)
-print(f"Números escolhidos pela Josi: {números_da_josi}")
-print(f"Números escolhidos pelo Fabio: {números_do_fabio}")
+numeros_da_josi.append(4)
+print(f"Números escolhidos pela Josi: {numeros_da_josi}")
+print(f"Números escolhidos pelo Fabio: {numeros_do_fabio}")
 ```
 Output:
 ```
@@ -219,7 +219,7 @@ Faça esse teste! Crie um arquivo python com o código dessa função. Você rec
 Basta fazer essas pequenas modificação na função:
 
 ```python
-def acrescenta_1_sem_padrao_mutável(lista=None):
+def acrescenta_1_sem_padrao_mutavel(lista=None):
     if lista is None:
         lista = []
     lista.append(1)
@@ -231,7 +231,7 @@ Agora sim, com o código escrito dessa forma, uma lista nova será criada todas 
 Então, com essa modificação, você consegue adivinhar o output do código abaixo?
 
 ```python
->>> print(acrescenta_1_sem_padrao_mutável(), acrescenta_1_sem_padrao_mutável())
+>>> print(acrescenta_1_sem_padrao_mutavel(), acrescenta_1_sem_padrao_mutavel())
 [1] [1]
 ```
 
@@ -239,20 +239,20 @@ Então, com essa modificação, você consegue adivinhar o output do código aba
 Sim! Já ouviu falar de memoization? Observe esse exemplo:
 
 ```python
-def enésimo_elemento_fibonacci(n, fibonacci_cached={0: 0, 1: 1}):
+def enesimo_elemento_fibonacci(n, fibonacci_cached={0: 0, 1: 1}):
     if n not in fibonacci_cached:
-        fibonacci_cached[n] = enésimo_elemento_fibonacci(n - 1) + enésimo_elemento_fibonacci(n - 2)
+        fibonacci_cached[n] = enesimo_elemento_fibonacci(n - 1) + enesimo_elemento_fibonacci(n - 2)
     return fibonacci_cached[n]
 ```
 
 ```python
->>> enésimo_elemento_fibonacci(10)
+>>> enesimo_elemento_fibonacci(10)
 55
 ```
 
 ```python
->>> enésimo_elemento_fibonacci
-<function __main__.enésimo_elemento_fibonacci(n, fibonacci_cached={0: 0, 1: 1, 2: 1, 3: 2, 4: 3, 5: 5, 6: 8, 7: 13, 8: 21, 9: 34, 10: 55})>
+>>> enesimo_elemento_fibonacci
+<function __main__.enesimo_elemento_fibonacci(n, fibonacci_cached={0: 0, 1: 1, 2: 1, 3: 2, 4: 3, 5: 5, 6: 8, 7: 13, 8: 21, 9: 34, 10: 55})>
 ```
 
 Observações:
